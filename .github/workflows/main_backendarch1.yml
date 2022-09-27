@@ -62,5 +62,5 @@ jobs:
         with:
           app-name: 'backendarch1'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0EED8CB6824F4946A96796E34AC5E701 }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_07ed4df186b04d0f9da447e242868c68 }}
           package: .
