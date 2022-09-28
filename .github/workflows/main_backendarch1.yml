@@ -50,23 +50,15 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: node-app
- - name: unzip artifact for deployment
-        run: unzip release.zip 
 
-      - name: 'Deploy to Azure Web App'
-        id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: 'webapptestarch1'
-          slot-name: 'Production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_052f6788aaee4962b114a1ba99f9c53f }}
-          package: .
-
+      - name: unzip artifact for deployment
+        run: unzip release.zip
+        
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'backendarch1'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1CA9D95F67134049AA2902C8F102DEE0 }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_0b60ce7a8ff8467db685f1c2971c7092 }}
           package: .
